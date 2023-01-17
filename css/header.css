@@ -1,0 +1,136 @@
+.header_highlight {
+    background-image: url(../images/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 660px;
+    padding: 20px 40px;
+    color: white;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+}
+
+.menu_list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu_list--item a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.menu_list--button button {
+    font-size: 0.8rem;
+    font-family: 'Fraunces', sans-serif;
+    background: white;
+    padding: 15px 20px;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 28px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.menu_list--button button:hover {
+    background: rgba(100%, 100%, 100%, .2);
+    color: white;
+    cursor: pointer;
+}
+
+.container_header_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container_header_title > h1 {
+    font-family: 'Fraunces', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+}
+
+.container_header_title::after {
+    content: url(../images/icon-arrow-down.svg);
+    margin-top: 40px;
+}
+
+input[type=checkbox],
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container_header_title > h1 {
+        font-size: 3.5rem;
+        text-align: center;
+        font-weight: 900;
+    }
+
+    .header_container img {
+        width: 160px;
+    } 
+
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        user-select: none;
+    }
+
+    .hamburger img {
+        width: 30px;
+    }
+
+    .menu_list {
+        display:none;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        left: 40px;
+        top: 100px;
+        text-align: center;
+        padding: 32px 0;
+        width: 100%;
+    }
+
+    .menu_list::before {
+        content: " ";
+        position: absolute;
+        top: -25px;
+        right: 0;
+        width: 0; 
+        height: 0; 
+        border:solid transparent;
+        border-width: 25px;
+        border-right-color: white;
+        border-left-width:0;
+    }
+
+    .menu_list--item {
+        margin-bottom: 30px;
+    }
+
+    .menu_list--item a {
+        color: hsl(210, 4%, 67%);
+        font-size: 1.5rem;
+    }
+
+    .menu_list--button button {
+        font-size: 1.1rem;
+        background: hsl(51, 100%, 49%);
+        padding: 15px 20px;
+    }    
+
+    input[type=checkbox]:checked ~ .menu_list{
+        display: block;
+    }
+}
